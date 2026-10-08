@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Godswill Sam-Nwafor | Backend Engineer</title>
+<meta name="description" content="Backend engineer in Lagos building APIs, payments and regulatory systems for banking with PHP/Laravel, .NET Core and React.">
+<meta property="og:title" content="Godswill Sam-Nwafor | Backend Engineer">
+<meta property="og:description" content="Backend engineer building banking platforms, payment reporting and workflow automation with PHP/Laravel, .NET Core and React.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa; --surface:#ffffff; --text:#0f172a; --muted:#475569; --faint:#94a3b8;
+  --line:#e2e8f0; --accent:#1f3a5f; --accent-2:#2563eb; --chip:#eef2f7; --shadow:0 1px 2px rgba(15,23,42,.06),0 4px 16px rgba(15,23,42,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0b1220;--surface:#111a2e;--text:#e5e9f0;--muted:#a3b0c2;--faint:#64748b;--line:#1f2a40;--accent:#8fb3e8;--accent-2:#60a5fa;--chip:#18233a;--shadow:none}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+nav .brand{font-weight:700;color:var(--text);letter-spacing:-.01em}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);font-size:14px;font-weight:500}
+nav ul a:hover{color:var(--text);text-decoration:none}
+header{padding:84px 0 56px}
+.eyebrow{font:500 13px/1 "JetBrains Mono",monospace;color:var(--accent-2);letter-spacing:.04em;margin-bottom:18px}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.08;letter-spacing:-.03em;margin:0 0 18px}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:680px;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);color:var(--text);background:var(--surface);box-shadow:var(--shadow)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+@media (prefers-color-scheme: dark){.btn.primary{color:#0b1220}}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:22px;letter-spacing:-.02em}
+.stat span{font-size:13px;color:var(--muted)}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:13px;font-family:"JetBrains Mono",monospace;font-weight:500;color:var(--faint);letter-spacing:.08em;text-transform:uppercase;margin:0 0 28px}
+.about p{font-size:18px;color:var(--muted);max-width:760px;margin:0 0 14px}
+.about p strong{color:var(--text);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card h3{margin:0 0 6px;font-size:19px;letter-spacing:-.01em}
+.card .kind{font-size:12px;font-weight:600;color:var(--accent-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px}
+.card p{color:var(--muted);margin:0 0 14px;font-size:15px}
+.card ul{margin:0 0 16px;padding-left:18px;color:var(--muted);font-size:14.5px}
+.card ul li{margin-bottom:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tag{font:500 12px/1 "JetBrains Mono",monospace;background:var(--chip);color:var(--muted);padding:6px 8px;border-radius:6px}
+.card .links{margin-top:16px;display:flex;gap:16px;font-size:14px;font-weight:600}
+.note{font-size:13px;color:var(--faint);margin-top:12px}
+.job{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:22px 0;border-bottom:1px dashed var(--line)}
+.job:last-child{border-bottom:0}
+.job .when{font:500 13px/1.6 "JetBrains Mono",monospace;color:var(--faint)}
+.job h3{margin:0;font-size:18px}
+.job .org{color:var(--muted);font-size:15px;margin-bottom:10px}
+.job ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+.job ul li{margin-bottom:5px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.skill h3{font-size:15px;margin:0 0 10px}
+.skill .tags{margin:0}
+.contact{text-align:center;padding:72px 0 88px}
+.contact h3{font-size:clamp(26px,4vw,36px);letter-spacing:-.02em;margin:0 0 12px}
+.contact p{color:var(--muted);margin:0 0 26px}
+.contact .cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--faint);font-size:13px;text-align:center}
+@media (max-width:760px){
+  nav ul{display:none}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid,.skills{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:6px}
+  header{padding:56px 0 40px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Godswill Sam-Nwafor</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">// backend engineer · lagos, nigeria</div>
+    <h1>I build the backend systems<br>banks run on.</h1>
+    <p class="lede">APIs, payment reporting, regulatory returns and approval workflows, in PHP/Laravel and .NET Core against Oracle, SQL Server and MySQL, with React when the job needs a front end.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View projects</a>
+      <a class="btn" href="https://www.linkedin.com/in/godswill-sam-nwafor-784b58109" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/lilsnog" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="mailto:chisomsamuel1@gmail.com">Email me</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3+ yrs</b><span>building software in banking</span></div>
+      <div class="stat"><b>19</b><span>automated approval workflows</span></div>
+      <div class="stat"><b>3</b><span>production databases: Oracle, SQL Server, MySQL</span></div>
+      <div class="stat"><b>Open</b><span>to remote, hybrid &amp; relocation</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about">
+    <h2>About</h2>
+    <p>I'm a backend engineer on the Software Engineering team at <strong>Greenwich Merchant Bank</strong> in Lagos. I build and support the internal platforms the bank's operations, credit, finance and compliance teams use every day.</p>
+    <p>My work sits where <strong>money, regulation and reliability</strong> meet: integrating with the Finacle core banking system, NIP and RTGS payment reporting, FIRS, NFIU and CBN regulatory returns, and the approval workflows behind credit and expenses. I care about parameterised queries, audit trails and systems that fail safely.</p>
+    <p>I hold an M.Sc. from the University of Port Harcourt and a B.Sc. from Covenant University.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Selected projects</h2>
+    <div class="grid">
+
+      <article class="card">
+        <div class="kind">Open source · PHP / Laravel</div>
+        <h3>Resilient SMS Gateway</h3>
+        <p>Sends SMS through several aggregators so one provider's outage doesn't stop OTPs and alerts.</p>
+        <ul>
+          <li>Longest-prefix routing per destination network</li>
+          <li>Automatic failover plus a per-provider circuit breaker (closed / open / half-open)</li>
+          <li>Separates permanent from temporary errors; full attempt audit trail</li>
+          <li>Laravel service provider and a queued job with backoff</li>
+        </ul>
+        <div class="tags"><span class="tag">PHP 8.2</span><span class="tag">Laravel</span><span class="tag">PHPUnit</span><span class="tag">GitHub Actions</span></div>
+        <div class="links"><a href="https://github.com/lilsnog/resilient-sms-gateway" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card">
+        <div class="kind">Open source · C# / .NET 8</div>
+        <h3>Approval Workflow API</h3>
+        <p>A multi-stage approval engine where who signs off on what is configuration, not code.</p>
+        <ul>
+          <li>Amount-based routing that skips senior stages on small requests</li>
+          <li>Segregation of duties: no self-approval, no approving two stages</li>
+          <li>Background SLA monitor that escalates overdue stages exactly once</li>
+          <li>RFC 7807 errors and a per-request lock against racing approvals</li>
+        </ul>
+        <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Minimal APIs</span><span class="tag">xUnit</span><span class="tag">TimeProvider</span></div>
+        <div class="links"><a href="https://github.com/lilsnog/approval-workflow-api" target="_blank" rel="noopener">Code ↗</a></div>
+      </article>
+
+      <article class="card">
+        <div class="kind">Work · .NET API + React</div>
+        <h3>RM Account Opening Portal</h3>
+        <p>A web application that lets relationship managers open retail and corporate accounts directly through the Finacle core banking system, with an admin console to manage the process.</p>
+        <div class="tags"><span class="tag">.NET</span><span class="tag">React</span><span class="tag">Finacle</span><span class="tag">REST</span></div>
+        <div class="note">Internal bank system; code is proprietary.</div>
+      </article>
+
+      <article class="card">
+        <div class="kind">Work · Laravel</div>
+        <h3>SMS Notification Middleware</h3>
+        <p>A multi-aggregator notification service with provider routing, failover, circuit breaking, queued delivery, delivery tracking and reporting endpoints.</p>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Queues</span><span class="tag">MySQL</span></div>
+        <div class="note">Internal bank system; code is proprietary.</div>
+      </article>
+
+      <article class="card">
+        <div class="kind">Work · PHP / MySQL</div>
+        <h3>Credit Disbursement Module</h3>
+        <p>Built from scratch: a role-based dashboard and multi-stage approval chain across Legal, Credit Risk, executive sign-off and Operations, with email notifications, webhook integration and scheduled SLA escalation.</p>
+        <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">n8n</span></div>
+        <div class="note">Internal bank system; code is proprietary.</div>
+      </article>
+
+      <article class="card">
+        <div class="kind">Work · .NET Core + n8n</div>
+        <h3>Regulatory Report Tracker</h3>
+        <p>An API that tracks regulatory reporting obligations, with automated reminder and escalation workflows so returns are never missed.</p>
+        <div class="tags"><span class="tag">.NET Core</span><span class="tag">MySQL</span><span class="tag">n8n</span></div>
+        <div class="note">Internal bank system; code is proprietary.</div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="when">Nov 2023 – Present</div>
+      <div>
+        <h3>Backend Engineer, Software Engineering</h3>
+        <div class="org">Greenwich Merchant Bank · Lagos</div>
+        <ul>
+          <li>Build and maintain backend services and internal tools on the bank's platform across Oracle (Finacle), SQL Server and MySQL.</li>
+          <li>Delivered regulatory reporting for FIRS (WHT/VAT), NFIU, CBN complaints (XML) and stamp duty, plus NIP and RTGS payment reports.</li>
+          <li>Designed a 19-workflow expense approval system in Power Automate for four group companies, and scheduled n8n notification workflows.</li>
+          <li>Built customer tools including balance-confirmation letter generation (Word/PDF) and global customer and account search.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Jun – Oct 2023</div>
+      <div>
+        <h3>Executive Assistant (Technical)</h3>
+        <div class="org">Wes-itec Limited</div>
+        <ul>
+          <li>Presented Newgen low-code and automation solutions to prospective clients, including C-level executives, and analysed client data to recommend automation strategies.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Dec 2022 – Mar 2023</div>
+      <div>
+        <h3>Technical Team Member (Internship)</h3>
+        <div class="org">Newgen Software, at Union Bank of Nigeria</div>
+        <ul>
+          <li>Contributed to the analysis and design of a Loan Factory system on Newgen iBPS, and digitised documents with Newgen ECM.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when">Earlier</div>
+      <div>
+        <h3>Web development &amp; IT support</h3>
+        <div class="org">New Horizons · Federal Mortgage Bank of Nigeria · NIIT</div>
+        <ul>
+          <li>Built websites and MySQL-backed applications, integrated third-party APIs, and supported systems and networks.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><h3>Languages</h3><div class="tags"><span class="tag">PHP</span><span class="tag">C#</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">Python</span></div></div>
+      <div class="skill"><h3>Frameworks</h3><div class="tags"><span class="tag">Laravel</span><span class="tag">ASP.NET Core</span><span class="tag">NestJS</span><span class="tag">React</span></div></div>
+      <div class="skill"><h3>Data</h3><div class="tags"><span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">Finacle</span></div></div>
+      <div class="skill"><h3>Automation</h3><div class="tags"><span class="tag">n8n</span><span class="tag">Power Automate</span><span class="tag">Power Apps</span><span class="tag">Zoho Flow</span></div></div>
+      <div class="skill"><h3>Domain</h3><div class="tags"><span class="tag">Core banking</span><span class="tag">NIP / RTGS</span><span class="tag">CBN · FIRS · NFIU</span><span class="tag">Approvals</span></div></div>
+      <div class="skill"><h3>Practices</h3><div class="tags"><span class="tag">REST APIs</span><span class="tag">Git</span><span class="tag">Testing</span><span class="tag">Audit logging</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h3>Let's build something reliable.</h3>
+    <p>Open to backend and full-stack roles: remote, hybrid in Lagos, or relocation.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:chisomsamuel1@gmail.com">chisomsamuel1@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/godswill-sam-nwafor-784b58109" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/lilsnog" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Godswill Sam-Nwafor</footer>
+
+</body>
+</html>
